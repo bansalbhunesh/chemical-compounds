@@ -1,0 +1,30 @@
+services:
+  # Use host network mode for macOS to bypass SQLite binary issues
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - JWT_SECRET=chemical-compounds-secret-key
+    volumes:
+      - sqlite-data:/app/data
+    networks:
+      - app-network
+
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - "4200:80"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  sqlite-data:

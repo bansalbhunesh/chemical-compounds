@@ -1,0 +1,146 @@
+.back-nav {
+  margin-bottom: 24px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.edit-header {
+  margin-bottom: 24px;
+}
+
+.loading-container {
+  min-height: 300px;
+  width: 100%;
+}
+
+.edit-form-container {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 32px;
+  margin-bottom: 48px;
+}
+
+.compound-form {
+  width: 100%;
+}
+
+/* Two-column layout */
+.form-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 2fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+/* Image Preview Section */
+.image-preview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.image-preview {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--background-color);
+  box-shadow: var(--card-shadow);
+  aspect-ratio: 1 / 1;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-url-field {
+  margin-bottom: 8px;
+}
+
+/* Form Fields Section */
+.form-fields-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Advanced Options Section */
+.form-section {
+  margin-top: 16px;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  padding: 16px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+}
+
+.section-description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0 0 16px 0;
+}
+
+.advanced-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.form-actions button {
+  min-width: 120px;
+}
+
+.submit-progress {
+  margin-top: 16px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .form-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-preview {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .edit-form-container {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .advanced-fields {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+  
+  .form-actions button {
+    width: 100%;
+  }
+} 

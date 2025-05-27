@@ -1,0 +1,15 @@
+{
+  "name": "chemical-compounds-manager",
+  "version": "1.0.0",
+  "description": "A web application for managing chemical compounds",
+  "scripts": {
+    "start:backend": "cd backend && PORT=3001 npm start",
+    "start:frontend": "cd frontend && npm start",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install": "npm run install:backend && npm run install:frontend",
+    "start": "echo 'Please run start:backend and start:frontend in separate terminals'"
+  },
+  "author": "",
+  "license": "ISC"
+}

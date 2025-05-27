@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Chemical Compounds Manager</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Force cache refresh -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <script>
+    // Add cache-busting parameter to all resources
+    document.addEventListener('DOMContentLoaded', function() {
+      const timestamp = new Date().getTime();
+      const linkEls = document.querySelectorAll('link[rel="stylesheet"]');
+      const scriptEls = document.querySelectorAll('script[src]');
+      
+      // Add timestamp to CSS files
+      linkEls.forEach(function(link) {
+        if (link.href.indexOf('?') === -1) {
+          link.href = link.href + '?v=' + timestamp;
+        }
+      });
+      
+      // Add timestamp to JS files
+      scriptEls.forEach(function(script) {
+        if (script.src.indexOf('?') === -1) {
+          script.src = script.src + '?v=' + timestamp;
+        }
+      });
+    });
+  </script>
+</head>
+<body class="mat-typography">
+  <app-root></app-root>
+</body>
+</html>

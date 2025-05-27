@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+html, body { 
+  height: 100%;
+  margin: 0;
+}
+
+body { 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #fafafa;
+}
+
+/* Custom Material Design theme */
+$primary: mat.define-palette(mat.$indigo-palette);
+$accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$warn: mat.define-palette(mat.$red-palette);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+@include mat.all-component-themes($theme);
+
+/* Global styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.mat-mdc-card {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+.mat-mdc-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+} 

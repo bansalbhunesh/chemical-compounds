@@ -1,0 +1,11 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Use a lightweight image without building SQLite
+# The SQLite binary will be mounted from the host
+RUN apk add --no-cache sqlite
+
+EXPOSE 3000
+
+CMD ["npm", "start"] 
